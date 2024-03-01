@@ -1,9 +1,12 @@
 import { Image, Text, View } from "react-native";
-import products from "../../assets/data/products";
+import { Product } from "@/types";
 
 interface IProductListItemProps {
-  product: (typeof products)[0];
+  product: Product;
 }
+
+const defaultPizzaImage =
+  "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/food/default.png";
 
 export default function ProductListItem({
   product,
@@ -13,7 +16,7 @@ export default function ProductListItem({
       <Image
         className="w-full aspect-square"
         source={{
-          uri: product.image,
+          uri: product.image ?? defaultPizzaImage,
         }}
       />
       <Text className="text-xl font-semibold my-2">Pizza Peperoni</Text>
