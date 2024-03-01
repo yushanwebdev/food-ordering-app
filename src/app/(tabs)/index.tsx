@@ -1,19 +1,12 @@
-import { Image, Text, View } from "react-native";
+import { View } from "react-native";
 import products from "../../../assets/data/products";
+import ProductListItem from "@/components/ProductListItem";
 
-const product = products[1];
-
-export default function TabOneScreen() {
+export default function MenuScreen() {
   return (
-    <View className="bg-white rounded-xl">
-      <Image
-        className="w-full aspect-square"
-        source={{
-          uri: product.image,
-        }}
-      />
-      <Text className="text-xl font-semibold my-2">Pizza Peperoni</Text>
-      <Text className="text-blue-300">$12.99</Text>
+    <View>
+      <ProductListItem product={products[0]} />
+      <ProductListItem product={products[1]} />
     </View>
   );
 }
