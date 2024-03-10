@@ -5,7 +5,7 @@ import PrimaryButton from "@/components/PrimaryButton";
 
 const Root = () => {
   return (
-    <View style={{ flex: 1, justifyContent: "center", padding: 10 }}>
+    <View className="flex-[1] justify-center p-3">
       <Link href={"/(user)"} asChild>
         <PrimaryButton text="User" />
       </Link>
