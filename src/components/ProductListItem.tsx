@@ -1,6 +1,6 @@
 import { Image, Pressable, Text, View } from "react-native";
 import { Product } from "@/types";
-import { Link } from "expo-router";
+import { Link, useSegments } from "expo-router";
 
 interface IProductListItemProps {
   product: Product;
@@ -12,8 +12,9 @@ export const defaultPizzaImage =
 export default function ProductListItem({
   product,
 }: Readonly<IProductListItemProps>) {
+  const segments = useSegments<["(admin)"] | ["(user)"]>();
   return (
-    <Link href={`/menu/${product.id}`} asChild>
+    <Link href={`/${segments[0]}/menu/${product.id}`} asChild>
       <Pressable className="bg-white rounded-xl p-4 flex-1 max-w-[50%]">
         <Image
           resizeMode="contain"
