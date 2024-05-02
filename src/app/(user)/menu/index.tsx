@@ -1,6 +1,7 @@
 import { FlatList } from "react-native";
 import ProductListItem from "@/components/ProductListItem";
 import products from "@assets/data/products";
+import { Link } from "expo-router";
 
 export default function MenuScreen() {
   return (
